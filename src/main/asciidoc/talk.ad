@@ -1,5 +1,14 @@
 = Introducción a los sistemas distribuidos
 
+
+== ¿Qué es un sistema distribuido?
+
+Es una colección de componentes informáticos autónomos que se presentan a sus usuarios como un sistema único y coherente.
+
+
+*van Steen M., Tanenbaum A. S., Distributed Systems 3.02 (2018).*
+
+
 [NOTE.speaker]
 ====
 
