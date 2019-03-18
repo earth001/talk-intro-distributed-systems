@@ -224,3 +224,13 @@ section[data-background-size] .footer span {
 .reveal pre {
   box-shadow: none;
 }
+
+//Fix background and text when export pdf
+@media print {
+  .backgrounds {
+    background-color: white;
+  }
+  .reveal p {
+    text-shadow: none;
+  }
+}

@@ -3,7 +3,7 @@
 
 == ¿Qué es un sistema distribuido?
 
-Es una colección de componentes informáticos autónomos que se presentan a sus usuarios como un sistema único y coherente.
+Es una colección de elementos informáticos autónomos que se muestran a sus usuarios como un sistema único y coherente.
 
 
 *van Steen M., Tanenbaum A. S., Distributed Systems 3.02 (2018).*
@@ -11,7 +11,156 @@ Es una colección de componentes informáticos autónomos que se presentan a sus
 
 [NOTE.speaker]
 ====
+A los elementos informáticos (hardware o software) normalmente se les llaman nodos.
+
+Los usuarios son las personas o sistemas que interactuan con el sistema.
+====
+
+== Características de un sistema distribuido
+
+1. Colección de elementos informáticos autónomos.
+
+** Independientes unos de otros.
+
+** Objetivos comunes.
+
+** Organizados en una Red Superpuesta.
+
+[NOTE.speaker]
+====
+
+Los sistemas distribuidos modernos pueden estar formados por diferentes tipos de nodos (Computadoras de alta capacidad de procesamiento HPC o dispositivos pequeños).
+
+Los nodos pueden trabajar independientemente unos de otros.
+
+Normalmente no comparten la misma noción de tiempo (no comparten el mismo reloj).
+
+Pueden también manejar autorización y estar organizados en grupos. En un grupo cerrado solo los miembros del grupo puedan enviar mensajes a otros miembros. Si son un grupo abierto cualquier nodo puede comunicarse con otro miembro del sistema distribuido.
+
+Una red superpuesta es una red que esta construida sobre una o más redes redes subyacentes. Los nodos de la red superpuesta están conectados por enlaces virtuales. Pueden usarse para implementar servicios que no están disponibles en las redes subyacentes. Normalmente están en la capa aplicación de TCP/IP.
+
+*Fuente*: Sasu Tarkoma (2010). Overlay Networks: Toward Information Networking. CRS Press. p. 3.
+
+Las redes superpuestas pueden organizarse en:
+
+1. *Estructuradas*: Cada nodo tiene un conjunto bien definido de vecinos con los que se pueden comunicar. Por ejemplo: Los nodos están organizados en un arbol o un anillo.
+
+2. *No estructuradas*: Cada nodo tiene una serie de referencias a otros nodos seleccionados al azar.
+
+En un principio las redes superpuestas están siempre conectadas.
 
 ====
+
+== Características de un sistema distribuido
+
+2. Sistema único y coherente.
+
+* Idealmente como una vista de un solo sistema.
+
+[NOTE.speaker]
+====
+No obstante los sistemas distribuidos eventualmente fallan.
+
+Inclusive fallas parciales pueden volver inestable todo el sistema.
+====
+
+== !
+image::master-slave-problems.png[background, size=auto]
+**http://timkellogg.me/blog/2013/06/09/dist-sys-antipatterns**
+
+== Objetivos de diseño
+
+1. Acceder y compartir recursos remotos.
+
+2. Hacer la distribución de procesos y recursos transparente para usuarios finales y aplicaciones.
+
+3. Ser abierto. Fácilmente usable e integrable con otros sistemas.
+
+4. Ser escalable.
+
+[NOTE.speaker]
+====
+
+*1. Acceder y compartir recursos remotos.*
+
+En los sistemas distribuidos los recursos pueden ser virtualmente cualquier cosa, por ejemplo perifericos, almacenamiento, datos, archivos, servicios, redes, entre otros.
+
+Dentro de los beneficios de compartir recursos están: reducir costos, facilitar la colaboración y el intercambio de información.
+
+*2. Hacer la distribución de procesos y recursos transparente para usuarios finales y aplicaciones.*
+
+*Tipos de distribución transparente*
+
+|===
+| *Transparencia* | *Descripción* | *Ejemplo*|
+| Acceso | Oculta diferencias en la representación de los datos y como el objeto es es accedido.  | Un sistema distribuido puede acceder a sistemas con diferentes sistemas operativos |
+| Ubicación | Oculta donde el objeto esta localizado. | Localizador de recursos uniforme (URL) |
+| Reubicación | Oculta que un objeto puede ser movido a otra ubicación mientras esta en uso.  | Mover recursos de un datacenter a otro sin que el usuario lo note |
+| Migración | Oculta que un objeto puede moverse a otra ubicación | Comunicación entre teléfonos móviles, rastreo en línea |
+| Replicación | Oculta que un objeto puede ser replicado | Redes de distribución de contenidos (CDN) ]
+| Concurrencia | Oculta que un objeto puede ser compartido muchos usuarios independientes. | Múltiples usuarios accediendo a una misma tabla de una base de datos |
+| Falla | Oculta la falla y recuperación de un objeto. | Si el recurso solicitado por el usuario no existe se provee una copia o se redirecciona automáticamente a un servicio de respaldo. |
+|===
+**Objeto** = Recurso/Proceso
+
+El grado de transparencia es un punto que debe ser analizado a detalle, pues en muchos casos no es buena idea ocultar todos los puntos de distribución, esto no solo por los recursos propios del sistema, sino por limitaciones propias de la tecnología. Por ejemplo enviar un mensaje de un servidor de Buenos Aires a Tokio va tardar algunos milisegundos, no solo por hecho del límite de la velocidad de la luz, sino por el tiempo de procesamiento de los switches de la red. En otros casos cuando son datos distribuidos y se pueden acceder de múltiples regiones se tiene que manejar la sincronización de los mismos.
+
+También en otros casos incluso puede ser necesario evidenciar alguno de los puntos de transparencia, por ejemplo en los servicios basados en ubicación, que podemos usar por ejemplo para saber donde queda el restaurante más cercano.
+
+*3. Ser abierto. Fácilmente usable e integrable con otros sistemas.*
+
+Ser abierto se refiere a seguir estándares para describir los componentes del sistema. Si se proveen servicios, definirlos a través de interfaces usando un lenguaje de definición de interfaces (Interface Definition Language IDL). Por ejemplo, para servicios Web Rest usar RAML o para SOAP usar WSDL.
+
+Otro requisito para ser abierto es tener *interoperabilidad*, esto se refiere a que diferentes componentes de diferentes fabricantes pueden coexistir con otros servicios y trabajar entre ellos porque usan un estandar común.
+
+Adicionalmente, se requiere también ser *portable*, esto es, un componente desarrollado para un Sistema A puede ser ejecutado, sin modificación, en un Sistema B que implemente las mismas interfaces de A.
+
+*4. Ser escalable.*
+
+La escalabilidad se mide en tres factores:
+
+1. Tamaño. Un sistema puede ser escalable con respecto a su tamaño. Esto quiere decir que puede agregar más usuarios y recursos sin afectar el rendimiento.
+
+2. Ubicación geográfica. Un sistema geográficamente escalable es uno en el que aunque los usuarios y los recursos estén muy separados, el hecho de que existan retrasos en la comunicación le afecta muy poco.
+
+3. Administración. Un sistema administrativamente escalable es uno que puede administrarse fácilmente incluso si abarca muchas organizaciones administrativas independientes.
+
+Para escalar se puede mejorar la capacidad de los servidores y de la red. Algunas técnicas básicas que podemos seguir son:
+
+1. Ocultar las latencias de comunicación. La idea es evitar la espera de repuesta de los servicios tanto como sea posible. Por ejemplo usando comunicación asincrónica.
+
+2. Distribuir el trabajo. Implica tomar las tareas de un componente y dividirlas en tareas más pequeñas y luego repartir esas tareas en el sistema.
+
+3. Replicación. Consiste en replicar componentes a través del sistema distribuido. La replicación no solo mejora el rendimiento, sino también la disponibilidad. Un ejemplo de replicación es el cache.
+
+====
+
+== !
+image::eventual_consistency.jpg[background, size=50%]
+**Pascal Jousselin. Invincible 1. Justice and Fresh Vegetables. Dupuis (2019)**
+
+== Fallas de la computación distribuida (L. Peter Deutsch)
+
+1. La red es confiable.
+
+2. La red es segura.
+
+3. La red es homogénea.
+
+4. La topología no cambia.
+
+== Fallas de la computación distribuida (L. Peter Deutsch)
+
+5. La latencia es cero.
+
+6. El ancho de banda es infinito.
+
+7. El costo de transporte es cero.
+
+8. Hay solo un administrador.
+
+== Tipos de sistemas distribuidos
+
+(Pag 25)
 
 include::self.ad[]

@@ -472,4 +472,14 @@ section[data-background-size] .footer span {
   box-shadow: none;
 }
 
+@media print {
+  .backgrounds {
+    background-color: white;
+  }
+
+  .reveal p {
+    text-shadow: none;
+  }
+}
+
 /*# sourceMappingURL=ude.css.map */
