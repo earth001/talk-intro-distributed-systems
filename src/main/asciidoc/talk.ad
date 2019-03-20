@@ -161,6 +161,20 @@ image::eventual_consistency.jpg[background, size=50%]
 
 == Tipos de sistemas distribuidos
 
-(Pag 25)
+1. Sistemas distribuidos de alto rendimiento.
+
+2. Sistemas distribuidos de información.
+
+3. Sistemas distribuidos ubicuos.
+
+[NOTE.speaker]
+====
+Los sistemas distribuidos de alto rendimiento pueden divirse en:
+
+* *Computación cluster*: Donde estaciones de trabajo con hardware similar comparten tareas en una red local de alta velocidad. Adicionalmente, cada uno usa el mismo sistema operativo.
+
+* Computación grid:
+
+====
 
 include::self.ad[]
