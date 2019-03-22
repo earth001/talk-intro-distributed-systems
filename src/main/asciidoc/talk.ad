@@ -169,11 +169,24 @@ image::eventual_consistency.jpg[background, size=50%]
 
 [NOTE.speaker]
 ====
-Los sistemas distribuidos de alto rendimiento pueden divirse en:
 
-* *Computación cluster*: Donde estaciones de trabajo con hardware similar comparten tareas en una red local de alta velocidad. Adicionalmente, cada uno usa el mismo sistema operativo.
+*1. Sistemas distribuidos de alto rendimiento*: Son sistemas distribuidos usados para tareas alto rendimiento.
 
-* Computación grid:
+Los sistemas distribuidos de alto rendimiento pueden dividirse en:
+
+* *Computación cluster*: Donde estaciones de trabajo con hardware similar comparten tareas en una red local de alta velocidad. Adicionalmente, cada una usa el mismo sistema operativo.
+
+* *Computación grid*: Esta formado por una federación de sistemas de informáticos, donde cada sistema puede estar en un dominio administrativo diferente, además de contar con hardware, software y tecnología de red diferente.
+
+* *Computación cloud*: Comparte las mismas características de la computación grid, pero los recursos se encuentran externos a la organización.
+
+*2. Sistemas distribuidos de información*: Sistemas donde los datos están distribuidos múltiples ubicaciones, donde cada ubicación tiene conexión con las otras. Para comunicarse entre sí estos sistemas usan al menos 4 vías de comunicación:
+
+* *Transferencia de archivos*: Las aplicaciones comparten información con archivos que contienen los datos. El formato de estos archivos puede ser de cualquier tipo (texto, binario, XML, YAML, entre otros).
+
+* *
+
+*3. Sistemas distribuidos ubicuos*:
 
 ====
 
