@@ -13,7 +13,7 @@ Es una colección de elementos informáticos autónomos que se muestran a sus us
 ====
 A los elementos informáticos (hardware o software) normalmente se les llaman nodos.
 
-Los usuarios son las personas o sistemas que interactuan con el sistema.
+Los usuarios son las personas o sistemas que interactúan con el sistema.
 ====
 
 == Características de un sistema distribuido
@@ -37,13 +37,13 @@ Normalmente no comparten la misma noción de tiempo (no comparten el mismo reloj
 
 Pueden también manejar autorización y estar organizados en grupos. En un grupo cerrado solo los miembros del grupo puedan enviar mensajes a otros miembros. Si son un grupo abierto cualquier nodo puede comunicarse con otro miembro del sistema distribuido.
 
-Una red superpuesta es una red que esta construida sobre una o más redes redes subyacentes. Los nodos de la red superpuesta están conectados por enlaces virtuales. Pueden usarse para implementar servicios que no están disponibles en las redes subyacentes. Normalmente están en la capa aplicación de TCP/IP.
+Una red superpuesta es una red que está construida sobre una o más redes subyacentes. Los nodos de la red superpuesta están conectados por enlaces virtuales. Pueden usarse para implementar servicios que no están disponibles en las redes subyacentes. Normalmente están en la capa aplicación de TCP/IP.
 
 *Fuente*: Sasu Tarkoma (2010). Overlay Networks: Toward Information Networking. CRS Press. p. 3.
 
 Las redes superpuestas pueden organizarse en:
 
-1. *Estructuradas*: Cada nodo tiene un conjunto bien definido de vecinos con los que se pueden comunicar. Por ejemplo: Los nodos están organizados en un arbol o un anillo.
+1. *Estructuradas*: Cada nodo tiene un conjunto bien definido de vecinos con los que se pueden comunicar. Por ejemplo: Los nodos están organizados en un árbol o un anillo.
 
 2. *No estructuradas*: Cada nodo tiene una serie de referencias a otros nodos seleccionados al azar.
 
@@ -83,7 +83,7 @@ image::master-slave-problems.png[background, size=auto]
 
 *1. Acceder y compartir recursos remotos.*
 
-En los sistemas distribuidos los recursos pueden ser virtualmente cualquier cosa, por ejemplo perifericos, almacenamiento, datos, archivos, servicios, redes, entre otros.
+En los sistemas distribuidos los recursos pueden ser virtualmente cualquier cosa, por ejemplo, periféricos, almacenamiento, datos, archivos, servicios, redes, entre otros.
 
 Dentro de los beneficios de compartir recursos están: reducir costos, facilitar la colaboración y el intercambio de información.
 
@@ -93,8 +93,8 @@ Dentro de los beneficios de compartir recursos están: reducir costos, facilitar
 
 |===
 | *Transparencia* | *Descripción* | *Ejemplo*|
-| Acceso | Oculta diferencias en la representación de los datos y como el objeto es es accedido.  | Un sistema distribuido puede acceder a sistemas con diferentes sistemas operativos |
-| Ubicación | Oculta donde el objeto esta localizado. | Localizador de recursos uniforme (URL) |
+| Acceso | Oculta diferencias en la representación de los datos y como el objeto es accedido.  | Un sistema distribuido puede acceder a sistemas con diferentes sistemas operativos |
+| Ubicación | Oculta donde el objeto está localizado. | Localizador de recursos uniforme (URL) |
 | Reubicación | Oculta que un objeto puede ser movido a otra ubicación mientras esta en uso.  | Mover recursos de un datacenter a otro sin que el usuario lo note |
 | Migración | Oculta que un objeto puede moverse a otra ubicación | Comunicación entre teléfonos móviles, rastreo en línea |
 | Replicación | Oculta que un objeto puede ser replicado | Redes de distribución de contenidos (CDN) ]
@@ -103,15 +103,15 @@ Dentro de los beneficios de compartir recursos están: reducir costos, facilitar
 |===
 **Objeto** = Recurso/Proceso
 
-El grado de transparencia es un punto que debe ser analizado a detalle, pues en muchos casos no es buena idea ocultar todos los puntos de distribución, esto no solo por los recursos propios del sistema, sino por limitaciones propias de la tecnología. Por ejemplo enviar un mensaje de un servidor de Buenos Aires a Tokio va tardar algunos milisegundos, no solo por hecho del límite de la velocidad de la luz, sino por el tiempo de procesamiento de los switches de la red. En otros casos cuando son datos distribuidos y se pueden acceder de múltiples regiones se tiene que manejar la sincronización de los mismos.
+El grado de transparencia es un punto que debe ser analizado a detalle, pues en muchos casos no es buena idea ocultar todos los puntos de distribución, esto no solo por los recursos propios del sistema, sino por limitaciones propias de la tecnología. Por ejemplo, enviar un mensaje de un servidor de Buenos Aires a Tokio va tardar algunos milisegundos, no solo por hecho del límite de la velocidad de la luz, sino por el tiempo de procesamiento de los switches de la red. En otros casos cuando son datos distribuidos y se pueden acceder de múltiples regiones se tiene que manejar la sincronización de los mismos.
 
-También en otros casos incluso puede ser necesario evidenciar alguno de los puntos de transparencia, por ejemplo en los servicios basados en ubicación, que podemos usar por ejemplo para saber donde queda el restaurante más cercano.
+También en otros casos incluso puede ser necesario evidenciar alguno de los puntos de transparencia, por ejemplo, en los servicios basados en ubicación, que podemos usar por ejemplo para saber dónde queda el restaurante más cercano.
 
 *3. Ser abierto. Fácilmente usable e integrable con otros sistemas.*
 
 Ser abierto se refiere a seguir estándares para describir los componentes del sistema. Si se proveen servicios, definirlos a través de interfaces usando un lenguaje de definición de interfaces (Interface Definition Language IDL). Por ejemplo, para servicios Web Rest usar RAML o para SOAP usar WSDL.
 
-Otro requisito para ser abierto es tener *interoperabilidad*, esto se refiere a que diferentes componentes de diferentes fabricantes pueden coexistir con otros servicios y trabajar entre ellos porque usan un estandar común.
+Otro requisito para ser abierto es tener *interoperabilidad*, esto se refiere a que diferentes componentes de diferentes fabricantes pueden coexistir con otros servicios y trabajar entre ellos porque usan un estándar común.
 
 Adicionalmente, se requiere también ser *portable*, esto es, un componente desarrollado para un Sistema A puede ser ejecutado, sin modificación, en un Sistema B que implemente las mismas interfaces de A.
 
@@ -121,13 +121,13 @@ La escalabilidad se mide en tres factores:
 
 1. Tamaño. Un sistema puede ser escalable con respecto a su tamaño. Esto quiere decir que puede agregar más usuarios y recursos sin afectar el rendimiento.
 
-2. Ubicación geográfica. Un sistema geográficamente escalable es uno en el que aunque los usuarios y los recursos estén muy separados, el hecho de que existan retrasos en la comunicación le afecta muy poco.
+2. Ubicación geográfica. Un sistema geográficamente escalable es uno en el que, aunque los usuarios y los recursos estén muy separados, el hecho de que existan retrasos en la comunicación le afecta muy poco.
 
 3. Administración. Un sistema administrativamente escalable es uno que puede administrarse fácilmente incluso si abarca muchas organizaciones administrativas independientes.
 
 Para escalar se puede mejorar la capacidad de los servidores y de la red. Algunas técnicas básicas que podemos seguir son:
 
-1. Ocultar las latencias de comunicación. La idea es evitar la espera de repuesta de los servicios tanto como sea posible. Por ejemplo usando comunicación asincrónica.
+1. Ocultar las latencias de comunicación. La idea es evitar la espera de repuesta de los servicios tanto como sea posible. Por ejemplo, usando comunicación asincrónica.
 
 2. Distribuir el trabajo. Implica tomar las tareas de un componente y dividirlas en tareas más pequeñas y luego repartir esas tareas en el sistema.
 
@@ -182,11 +182,15 @@ Los sistemas distribuidos de alto rendimiento pueden dividirse en:
 
 *2. Sistemas distribuidos de información*: Sistemas donde los datos están distribuidos múltiples ubicaciones, donde cada ubicación tiene conexión con las otras. Para comunicarse entre sí estos sistemas usan al menos 4 vías de comunicación:
 
-* *Transferencia de archivos*: Las aplicaciones comparten información con archivos que contienen los datos. El formato de estos archivos puede ser de cualquier tipo (texto, binario, XML, YAML, entre otros).
+* *Transferencia de archivos*: Las aplicaciones comparten información usando archivos con datos. El formato de estos archivos puede ser de cualquier tipo (texto, binario, XML, YAML, entre otros). Algunas dificultades que se pueden presentar con esta vía de comunicación son: manejo de formato, administración de los archivos y la propagación de actualización (se requiere un sistema o aplicación para detectar cambios en los ficheros).
 
-* *
+* *Base de datos compartida*: Las aplicaciones comparten una base de datos común. Como dificultades se pueden presentar el diseño de un esquema común y la posibilidad de que múltiples operaciones en la base de datos la conviertan en un cuello de botella.
 
-*3. Sistemas distribuidos ubicuos*:
+* *Llamada de procedimientos remotos*: Aquí las aplicaciones pueden invocar procedimientos ubicados en otros equipos. Un proceso en una máquina A llama a un procedimiento en la máquina B, el proceso de llamada en A se suspende, y la ejecución del procedimiento llamado tiene lugar en B. Ningún mensaje pasa en absoluto. Una de las dificultades que se puede presentar esta alternativa es que ambos cliente y servidor deben estar ejecutándose al mismo tiempo.
+
+* *Mensajería*: Para este caso se usa un sistema de mensajería que recibe las solicitudes de la aplicación A que se quieren ejecutar en la aplicación B. El sistema de mensajería garantiza que finalmente se entregue la solicitud y, si es necesario, que la respuesta también se devuelva. Una dificultad que pueden presentar estos sistemas es que no se puede asumir que la ejecución del método se hace al mismo tiempo del lado B y la posibilidad de que los mensajes se pierdan.
+
+*3. Sistemas distribuidos ubicuos*: Estos sistemas estan caracterizados por su estabilidad, donde los nodos son fijos y poseen más o menos conexión permanente, pueden dar la apariencia de que los componentes fallan solo ocasionalmente. Una de las diferencias que tienen con respecto a los sistemas distribuidos de alto rendimiento o de información es que la separación entre los usuarios y los componentes del sistema es difusa, esto porque normalmente no tienen interfaces dedicadas como pantallas o teclados, sino que usan sensores para detectar el comportamiento de los usuarios. Usualmente están conformados por dispositivos pequeños, alimentados por batería, mobiles y con conexión inalámbrica.
 
 ====
 
