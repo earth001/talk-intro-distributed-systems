@@ -194,4 +194,33 @@ Los sistemas distribuidos de alto rendimiento pueden dividirse en:
 
 ====
 
+== Arquitectura
+
+* **Arquitectura**: Forma en la cual definimos y distribuimos los Componentes de una aplicación.
+
+* **Componente**: Sistema residente en una máquina que posee una utilidad específica y una interfaz o API con la que puede proveer o consumir servicios.
+
+== Arquitectura
+
+La Arquitectura puede ser muy simple o compleja  como lo requiera el problema a resolver, dependiendo de múltiples factores, como ser:
+
+* Tamaño de la aplicación (cantidad de requerimientos a resolver)
+
+* Cantidad de usuarios de la misma
+
+* Posible interacción con otras aplicaciones
+
+== Tipos de arquitectura
+
+* Centralizado
+
+* Cliente - Servidor
+
+* N-Tier
+
+== Centralizado
+
+image::centralizado.png[background, size=auto]
+
+
 include::self.ad[]
