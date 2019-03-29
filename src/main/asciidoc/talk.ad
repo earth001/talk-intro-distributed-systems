@@ -18,7 +18,7 @@ Los usuarios son las personas o sistemas que interactúan con el sistema.
 
 == Características de un sistema distribuido
 
-1. Colección de elementos informáticos autónomos.
+*1. Colección de elementos informáticos autónomos*
 
 ** Independientes unos de otros.
 
@@ -53,7 +53,7 @@ En un principio las redes superpuestas están siempre conectadas.
 
 == Características de un sistema distribuido
 
-2. Sistema único y coherente.
+*2. Sistema único y coherente.*
 
 * Idealmente como una vista de un solo sistema.
 
@@ -141,23 +141,23 @@ image::eventual_consistency.jpg[background, size=50%]
 
 == Fallas de la computación distribuida (L. Peter Deutsch)
 
-1. La red es confiable.
+*1. La red es confiable.*
 
-2. La red es segura.
+*2. La red es segura.*
 
-3. La red es homogénea.
+*3. La red es homogénea.*
 
-4. La topología no cambia.
+*4. La topología no cambia.*
 
 == Fallas de la computación distribuida (L. Peter Deutsch)
 
-5. La latencia es cero.
+*5. La latencia es cero.*
 
-6. El ancho de banda es infinito.
+*6. El ancho de banda es infinito.*
 
-7. El costo de transporte es cero.
+*7. El costo de transporte es cero.*
 
-8. Hay solo un administrador.
+*8. Hay solo un administrador.*
 
 == Tipos de sistemas distribuidos
 
@@ -222,5 +222,95 @@ La Arquitectura puede ser muy simple o compleja  como lo requiera el problema a 
 
 image::centralizado.png[background, size=auto]
 
+[NOTE.speaker]
+====
 
-include::self.ad[]
+* Todo el software y datos en 1 solo equipo (servidor).
+
+* Clientes "dummy": sin programas, solo pantallas y teclados.
+
+* Poder de almacenamiento y computo en el servidor.
+
+====
+
+== Cliente - Servidor
+
+image::cliente-servidor.png[background, size=auto]
+
+[NOTE.speaker]
+====
+* Datos y algún programa en 1 solo equipo (servidor).
+
+* Clientes contienen el software (distribuido).
+
+* Poder de almacenamiento y computo compartido entre el servidor y los clientes.
+
+====
+
+== N-Tier
+
+image::n-tier.png[background, size=auto]
+
+[NOTE.speaker]
+====
+* Uno o varios Servidores brindan servicios.
+
+* Uno o varios Clientes acceden a los distintos Servidores.
+
+* Algunos de los Servidores pueden a su vez ser Clientes de otros Servidores.
+
+* Poder de almacenamiento y computo compartido entre los servidores y los clientes.
+
+====
+
+== 3 capas: El tipo más usado de N-Tier
+
+* Capa de presentación
+
+* Capa de negocio
+
+* Capa de datos
+
+[NOTE.speaker]
+====
+
+* Esta arquitectura es distribuida y heterogénea.
+
+* Al estar los datos distribuidos se requiere sincronización.
+
+* Los programas pueden ser diferentes.
+
+* Los sistemas operativos de cada equipo pueden ser diferentes.
+
+====
+
+== Capas físicas y capas lógicas
+
+* La denominación Tier en inglés generalmente hace referencia a una capa *física*. Son partes de una arquitectura para implementar un sistema.
+
+* Un capa *lógica* puede verse como una agrupación de componentes con funcionalidad común o conocimiento cohesivo sobre un aspecto del sistema.
+
+
+[NOTE.speaker]
+====
+Ejemplo de capas físicas: Un servidor, una base de datos, clientes que consumen servicios.
+
+Ejemplo de capas lógicas: Capa de presentación, capa de servicios, capa de negocio, capa de datos.
+
+La capa gráfica, la capa lógica y la capa de datos o persistencia, pueden residir en el mismo espacio servidor o espacio físico, de hecho incluso la base de datos puede estar en el mismo servidor.
+
+Cuando generalmente se habla de arquitectura de un sistema, se refiere a la arquitectura lógica. De aquí en más cuando hablemos de arquitectura, componentes o módulos, nos centraremos en su agrupación lógica y no física.
+====
+
+== Ejemplo de capas lógicas
+
+image::Overview_of_a_three-tier_application_vectorVersion.svg[background, size=auto]
+
+[NOTE.speaker]
+====
+Fuente imagen: https://commons.wikimedia.org/wiki/File:Overview_of_a_three-tier_application_vectorVersion.svg
+
+Identifique dentro de la capas lógicas posibles componentes físicos.
+
+Para generar pdf incluir al final de la presentación lo siguiente: ?showNotes=separate-page&print-pdf
+====

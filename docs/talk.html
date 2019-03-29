@@ -105,7 +105,8 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );</script><!--[if 
 <div class="paragraph"><p><strong>van Steen M., Tanenbaum A. S., Distributed Systems 3.02 (2018).</strong></p></div>
 <aside class="notes"><div class="paragraph"><p>A los elementos informáticos (hardware o software) normalmente se les llaman nodos.</p></div>
 <div class="paragraph"><p>Los usuarios son las personas o sistemas que interactúan con el sistema.</p></div></aside></section>
-<section id="_características_de_un_sistema_distribuido"><h2>Características de un sistema distribuido</h2><div class="olist arabic"><ol class="arabic"><li><p>Colección de elementos informáticos autónomos.</p><div class="ulist"><ul><li><p>Independientes unos de otros.</p></li><li><p>Objetivos comunes.</p></li><li><p>Organizados en una Red Superpuesta.</p></li></ul></div></li></ol></div>
+<section id="_características_de_un_sistema_distribuido"><h2>Características de un sistema distribuido</h2><div class="paragraph"><p><strong>1. Colección de elementos informáticos autónomos</strong></p></div>
+<div class="ulist"><ul><li><p>Independientes unos de otros.</p></li><li><p>Objetivos comunes.</p></li><li><p>Organizados en una Red Superpuesta.</p></li></ul></div>
 <aside class="notes"><div class="paragraph"><p>Los sistemas distribuidos modernos pueden estar formados por diferentes tipos de nodos (Computadoras de alta capacidad de procesamiento HPC o dispositivos pequeños).</p></div>
 <div class="paragraph"><p>Los nodos pueden trabajar independientemente unos de otros.</p></div>
 <div class="paragraph"><p>Normalmente no comparten la misma noción de tiempo (no comparten el mismo reloj).</p></div>
@@ -115,7 +116,8 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );</script><!--[if 
 <div class="paragraph"><p>Las redes superpuestas pueden organizarse en:</p></div>
 <div class="olist arabic"><ol class="arabic"><li><p><strong>Estructuradas</strong>: Cada nodo tiene un conjunto bien definido de vecinos con los que se pueden comunicar. Por ejemplo: Los nodos están organizados en un árbol o un anillo.</p></li><li><p><strong>No estructuradas</strong>: Cada nodo tiene una serie de referencias a otros nodos seleccionados al azar.</p></li></ol></div>
 <div class="paragraph"><p>En un principio las redes superpuestas están siempre conectadas.</p></div></aside></section>
-<section id="_características_de_un_sistema_distribuido_2"><h2>Características de un sistema distribuido</h2><div class="olist arabic"><ol class="arabic"><li><p>Sistema único y coherente.</p><div class="ulist"><ul><li><p>Idealmente como una vista de un solo sistema.</p></li></ul></div></li></ol></div>
+<section id="_características_de_un_sistema_distribuido_2"><h2>Características de un sistema distribuido</h2><div class="paragraph"><p><strong>2. Sistema único y coherente.</strong></p></div>
+<div class="ulist"><ul><li><p>Idealmente como una vista de un solo sistema.</p></li></ul></div>
 <aside class="notes"><div class="paragraph"><p>No obstante los sistemas distribuidos eventualmente fallan.</p></div>
 <div class="paragraph"><p>Inclusive fallas parciales pueden volver inestable todo el sistema.</p></div></aside></section>
 <section data-background-image="images/master-slave-problems.png" data-background-size="auto">
@@ -141,8 +143,14 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );</script><!--[if 
 <div class="olist arabic"><ol class="arabic"><li><p>Ocultar las latencias de comunicación. La idea es evitar la espera de repuesta de los servicios tanto como sea posible. Por ejemplo, usando comunicación asincrónica.</p></li><li><p>Distribuir el trabajo. Implica tomar las tareas de un componente y dividirlas en tareas más pequeñas y luego repartir esas tareas en el sistema.</p></li><li><p>Replicación. Consiste en replicar componentes a través del sistema distribuido. La replicación no solo mejora el rendimiento, sino también la disponibilidad. Un ejemplo de replicación es el cache.</p></li></ol></div></aside></section>
 <section data-background-image="images/eventual_consistency.jpg" data-background-size="50%">
 <div class="paragraph"><p><strong>Pascal Jousselin. Invincible 1. Justice and Fresh Vegetables. Dupuis (2019)</strong></p></div></section>
-<section id="_fallas_de_la_computación_distribuida_l_peter_deutsch"><h2>Fallas de la computación distribuida (L. Peter Deutsch)</h2><div class="olist arabic"><ol class="arabic"><li><p>La red es confiable.</p></li><li><p>La red es segura.</p></li><li><p>La red es homogénea.</p></li><li><p>La topología no cambia.</p></li></ol></div></section>
-<section id="_fallas_de_la_computación_distribuida_l_peter_deutsch_2"><h2>Fallas de la computación distribuida (L. Peter Deutsch)</h2><div class="olist arabic"><ol class="arabic"><li><p>La latencia es cero.</p></li><li><p>El ancho de banda es infinito.</p></li><li><p>El costo de transporte es cero.</p></li><li><p>Hay solo un administrador.</p></li></ol></div></section>
+<section id="_fallas_de_la_computación_distribuida_l_peter_deutsch"><h2>Fallas de la computación distribuida (L. Peter Deutsch)</h2><div class="paragraph"><p><strong>1. La red es confiable.</strong></p></div>
+<div class="paragraph"><p><strong>2. La red es segura.</strong></p></div>
+<div class="paragraph"><p><strong>3. La red es homogénea.</strong></p></div>
+<div class="paragraph"><p><strong>4. La topología no cambia.</strong></p></div></section>
+<section id="_fallas_de_la_computación_distribuida_l_peter_deutsch_2"><h2>Fallas de la computación distribuida (L. Peter Deutsch)</h2><div class="paragraph"><p><strong>5. La latencia es cero.</strong></p></div>
+<div class="paragraph"><p><strong>6. El ancho de banda es infinito.</strong></p></div>
+<div class="paragraph"><p><strong>7. El costo de transporte es cero.</strong></p></div>
+<div class="paragraph"><p><strong>8. Hay solo un administrador.</strong></p></div></section>
 <section id="_tipos_de_sistemas_distribuidos"><h2>Tipos de sistemas distribuidos</h2><div class="olist arabic"><ol class="arabic"><li><p>Sistemas distribuidos de alto rendimiento.</p></li><li><p>Sistemas distribuidos de información.</p></li><li><p>Sistemas distribuidos ubicuos.</p></li></ol></div>
 <aside class="notes"><div class="paragraph"><p><strong>1. Sistemas distribuidos de alto rendimiento</strong>: Son sistemas distribuidos usados para tareas alto rendimiento.</p></div>
 <div class="paragraph"><p>Los sistemas distribuidos de alto rendimiento pueden dividirse en:</p></div>
@@ -154,9 +162,23 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );</script><!--[if 
 <section id="_arquitectura_2"><h2>Arquitectura</h2><div class="paragraph"><p>La Arquitectura puede ser muy simple o compleja  como lo requiera el problema a resolver, dependiendo de múltiples factores, como ser:</p></div>
 <div class="ulist"><ul><li><p>Tamaño de la aplicación (cantidad de requerimientos a resolver)</p></li><li><p>Cantidad de usuarios de la misma</p></li><li><p>Posible interacción con otras aplicaciones</p></li></ul></div></section>
 <section id="_tipos_de_arquitectura"><h2>Tipos de arquitectura</h2><div class="ulist"><ul><li><p>Centralizado</p></li><li><p>Cliente - Servidor</p></li><li><p>N-Tier</p></li></ul></div></section>
-<section id="_centralizado" data-background-image="images/centralizado.png" data-background-size="auto"><h2>Centralizado</h2></section>
-<section id="_juan_moreno"><h2>Juan Moreno</h2><div class="ulist"><ul><li><p>Fuentes:</p><div class="ulist"><ul><li><p>&#8230;&#8203;</p></li></ul></div></li><li><p><a href="{slide-link}">Presentación online en: {slide-link}</a></p></li></ul></div>
-<div class="exampleblock"><div class="content"><div class="paragraph"><p>Para imprimir agregar al link: ?showNotes=separate-page&amp;print-pdf</p></div></div></div></section></div></div><script src="reveal.js-3.7.0/lib/js/head.min.js"></script><script src="reveal.js-3.7.0/js/reveal.js"></script><script>Array.prototype.slice.call(document.querySelectorAll('.slides section')).forEach(function(slide) {
+<section id="_centralizado" data-background-image="images/centralizado.png" data-background-size="auto"><h2>Centralizado</h2>
+<aside class="notes"><div class="ulist"><ul><li><p>Todo el software y datos en 1 solo equipo (servidor).</p></li><li><p>Clientes "dummy": sin programas, solo pantallas y teclados.</p></li><li><p>Poder de almacenamiento y computo en el servidor.</p></li></ul></div></aside></section>
+<section id="_cliente_servidor" data-background-image="images/cliente-servidor.png" data-background-size="auto"><h2>Cliente - Servidor</h2>
+<aside class="notes"><div class="ulist"><ul><li><p>Datos y algún programa en 1 solo equipo (servidor).</p></li><li><p>Clientes contienen el software (distribuido).</p></li><li><p>Poder de almacenamiento y computo compartido entre el servidor y los clientes.</p></li></ul></div></aside></section>
+<section id="_n_tier" data-background-image="images/n-tier.png" data-background-size="auto"><h2>N-Tier</h2>
+<aside class="notes"><div class="ulist"><ul><li><p>Uno o varios Servidores brindan servicios.</p></li><li><p>Uno o varios Clientes acceden a los distintos Servidores.</p></li><li><p>Algunos de los Servidores pueden a su vez ser Clientes de otros Servidores.</p></li><li><p>Poder de almacenamiento y computo compartido entre los servidores y los clientes.</p></li></ul></div></aside></section>
+<section id="_3_capas_el_tipo_más_usado_de_n_tier"><h2>3 capas: El tipo más usado de N-Tier</h2><div class="ulist"><ul><li><p>Capa de presentación</p></li><li><p>Capa de negocio</p></li><li><p>Capa de datos</p></li></ul></div>
+<aside class="notes"><div class="ulist"><ul><li><p>Esta arquitectura es distribuida y heterogénea.</p></li><li><p>Al estar los datos distribuidos se requiere sincronización.</p></li><li><p>Los programas pueden ser diferentes.</p></li><li><p>Los sistemas operativos de cada equipo pueden ser diferentes.</p></li></ul></div></aside></section>
+<section id="_capas_físicas_y_capas_lógicas"><h2>Capas físicas y capas lógicas</h2><div class="ulist"><ul><li><p>La denominación Tier en inglés generalmente hace referencia a una capa <strong>física</strong>. Son partes de una arquitectura para implementar un sistema.</p></li><li><p>Un capa <strong>lógica</strong> puede verse como una agrupación de componentes con funcionalidad común o conocimiento cohesivo sobre un aspecto del sistema.</p></li></ul></div>
+<aside class="notes"><div class="paragraph"><p>Ejemplo de capas físicas: Un servidor, una base de datos, clientes que consumen servicios.</p></div>
+<div class="paragraph"><p>Ejemplo de capas lógicas: Capa de presentación, capa de servicios, capa de negocio, capa de datos.</p></div>
+<div class="paragraph"><p>La capa gráfica, la capa lógica y la capa de datos o persistencia, pueden residir en el mismo espacio servidor o espacio físico, de hecho incluso la base de datos puede estar en el mismo servidor.</p></div>
+<div class="paragraph"><p>Cuando generalmente se habla de arquitectura de un sistema, se refiere a la arquitectura lógica. De aquí en más cuando hablemos de arquitectura, componentes o módulos, nos centraremos en su agrupación lógica y no física.</p></div></aside></section>
+<section id="_ejemplo_de_capas_lógicas" data-background-image="images/Overview_of_a_three-tier_application_vectorVersion.svg" data-background-size="auto"><h2>Ejemplo de capas lógicas</h2>
+<aside class="notes"><div class="paragraph"><p>Fuente imagen: <a href="https://commons.wikimedia.org/wiki/File:Overview_of_a_three-tier_application_vectorVersion.svg" class="bare">https://commons.wikimedia.org/wiki/File:Overview_of_a_three-tier_application_vectorVersion.svg</a></p></div>
+<div class="paragraph"><p>Identifique dentro de la capas lógicas posibles componentes físicos.</p></div>
+<div class="paragraph"><p>Para generar pdf incluir al final de la presentación lo siguiente: ?showNotes=separate-page&amp;print-pdf</p></div></aside></section></div></div><script src="reveal.js-3.7.0/lib/js/head.min.js"></script><script src="reveal.js-3.7.0/js/reveal.js"></script><script>Array.prototype.slice.call(document.querySelectorAll('.slides section')).forEach(function(slide) {
   if (slide.getAttribute('data-background-color')) return;
   // user needs to explicitly say he wants CSS color to override otherwise we might break custom css or theme (#226)
   if (!(slide.classList.contains('canvas') || slide.classList.contains('background'))) return;
